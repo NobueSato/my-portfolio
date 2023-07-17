@@ -1,0 +1,20 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+  padding: 30px;
+  font-family: 'Roboto', sans-serif;
+  background-image: url("../assets/images/bg-image.png");
+  background-size: contain;
+  background-repeat: repeat-y;
+}
+
+section {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.non-hero {
+  height: 30%;
+}
