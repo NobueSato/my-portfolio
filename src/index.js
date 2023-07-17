@@ -1,13 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
-import './styles/tailwind.css';
+import './styles/global.css'; // Import the global CSS file
 
-ReactDOM.render(
-  <React.StrictMode>
-    <div className="bg-purple">
-      <App />
-    </div>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// the traditional and actual entry point for all node apps
+// in React it hass code of what to render and where to render.
+
+// Before
+// import ReactDOM from 'react-dom';
+// ReactDOM.render(<App />, document.getElementById('root'));
+
+// After (React18)
+import ReactDOM from 'react-dom/client';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
