@@ -4,22 +4,22 @@ import logo from "../assets/images/logo.png";
 function NavBar() {
   return (
     <>
-      <nav className="w-full overflow-auto">
+      <nav className="nav-bar w-full overflow-hidden">
         <ul className="flex">
-          <li className="w-1/4 flex justify-center items-center">
-            <Link to="/about" className="float-left text-white">ABOUT</Link>
+          <li>
+            <Link to="section2" smooth={true} duration={500}>ABOUT</Link>
          </li>
-         <li className="w-1/4 flex justify-center items-center">
-            <Link to="/skills" className="float-left text-white ">SKILLS</Link>
+         <li>
+            <Link to="section3" smooth={true} duration={500}>SKILLS</Link>
           </li>
-          <li className="w-1/4 flex justify-center items-center">
-            <Link to="/" className="float-left"><img src={logo} alt="Logo" className="h-10 w-auto" /></Link>
+          <li>
+            <Link to="/"><img src={logo} alt="Logo" className="h-32 w-auto" /></Link>
           </li>
-          <li className="w-1/4 flex justify-center items-center">
-            <Link to="/projects" className="float-left text-white">PROJECTS</Link>
+          <li>
+            <Link to="section4" smooth={true} duration={500}>PROJECTS</Link>
           </li>
-          <li className="w-1/4 flex justify-center items-center">
-            <Link to="/contact" className="float-left text-white">CONTACT</Link>
+          <li>
+            <Link to="section5" smooth={true} duration={500}>CONTACT</Link>
           </li>
        </ul>
       </nav>

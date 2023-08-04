@@ -1,6 +1,6 @@
 import React from 'react';
 import App from './App';
-import './styles/global.css'; // Import the global CSS file
+import './styles/global.scss'; // Import the global CSS file
 
 // the traditional and actual entry point for all node apps
 // in React it hass code of what to render and where to render.
