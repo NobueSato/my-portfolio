@@ -11,8 +11,13 @@ body {
   background-repeat: repeat-y;
 }
 
+.nav-bar ul li a{
+  float: left;
+  color: #FF00BF;
+}
+
 section {
-  margin: 80px auto 0; /* Use "auto" for horizontal centering */
+  margin: 50px auto 0; /* Use "auto" for horizontal centering */
   padding: 10px;
   height: 80vh;
   width: 90%; /* Set the width to 90% */
@@ -29,6 +34,13 @@ section {
   padding-bottom: 30px;
   height: 15%;
   position: relative;
+}
+
+.grid-container {
+  align-items: center;
+  justify-content: center;
+  max-height: 100%; /* Ensure the grid-container does not exceed its parent's height */
+  overflow: hidden; /* Hide any overflowing content */
 }
 
 .window-purple-bg {
@@ -76,10 +88,12 @@ section {
   height: 85%;
 }
 
-.nav-link {
-  font-size: 40px;
+.contact-form {
+  background-image: url("../assets/images/contactbg.png");
+  background-size: 90% 100%; /* Adjust the image size to cover the section */
+  background-repeat: no-repeat; /* Prevent image from repeating */
+  background-position: center; /* Center the image within the section */
 }
-
 
 /* Styles for screens with a width of 640px or more (sm breakpoint) */
 @media (min-width: 640px) {
@@ -104,12 +118,9 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .nav-bar ul li a{
-    float: left;
-    color: #ffffff;
-    font-size: 3rem;
+    font-size: 2rem;
+    font-weight: bold;
+    
   }
 
   #hero img {
@@ -117,3 +128,5 @@ section {
   }
 
 }
+
+
