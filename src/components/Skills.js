@@ -37,15 +37,21 @@ function Skills() {
         {/* Card 1 */}
         <Card title="Front-end" colour="blue">
           <p>Text for Card 1</p>
+          <p>Text for Card 1</p>
+          <p>Text for Card 1</p>
         </Card>
 
         {/* Card 2 */}
         <Card title="Back-end" colour="blue">
           <p>Text for Card 2</p>
+          <p>Text for Card 2</p>
+          <p>Text for Card 2</p>
         </Card>
 
         {/* Card 3 */}
         <Card title="Others" colour="blue">
+          <p>Text for Card 3</p>
+          <p>Text for Card 3</p>
           <p>Text for Card 3</p>
         </Card>
       </div>
