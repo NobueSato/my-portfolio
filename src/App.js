@@ -6,6 +6,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 //  a central place to organize and assemble the components that make up your application's user interface.  It acts as the "container"
 // It has the root component of the react app because every view and component are handled with hierarchy in React, 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/contact" element={<Contact />}  />
         </Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
