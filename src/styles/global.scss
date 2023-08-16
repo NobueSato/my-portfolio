@@ -95,6 +95,38 @@ section {
   background-position: center; /* Center the image within the section */
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: center; /* Keep labels left-justified */
+  width: 700px;
+}
+
+label {
+  display: block;
+  text-align: left; /* Keep labels left-justified */
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  align-self: center; /* Center the button within the flex container */
+  width: 100px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
 /* Styles for screens with a width of 640px or more (sm breakpoint) */
 @media (min-width: 640px) {
 
