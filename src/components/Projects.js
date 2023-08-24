@@ -1,6 +1,6 @@
 import titleImage from "../assets/images/projects.png";
 import projectImg from "../assets/images/projectImg.png";
-import projectData from '../assets/projectData.json';   // The data is relatively small now hence using JSON file
+import data from '../assets/data.json';   // The data is relatively small now hence using JSON file
 
 function Projects() {
 
@@ -14,7 +14,7 @@ function Projects() {
 
       <p className="text-5xl font-semibold mb-4">Projects I've done with ❤️</p>
       <div className="h-4/6 mt-5 grid grid-cols-4 gap-4">
-        {projectData.projects.map((project, index) => (
+        {data.projects.map((project, index) => (
           <div key={index} className="h-full p-10 bg-white border shadow-lg transform">
           {/* Content for the first polaroid */}
           <img src={projectImg} alt={project.name} className="w-full h-5/6 object-contain mb-4" />

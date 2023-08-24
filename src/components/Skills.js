@@ -1,4 +1,5 @@
-import image from "../assets/images/skills.png";
+import titleimg from "../assets/images/skills.png";
+import data from '../assets/data.json';
 
 export function Card({ title, colour = "purple", children }) {
   const windowClass = `window-${colour}-bg`;
@@ -26,34 +27,25 @@ export function Card({ title, colour = "purple", children }) {
 }
 
 function Skills() {
+  const skillsTitles = data.skills.titles;
+  const skills = data.skills.skills;
+
   return (
     <>
       <div className="section-header">
-        <img src={image} alt="Skills title" className="h-full w-auto" />
+        <img src={titleimg} alt="Skills title" className="h-full w-auto" />
         <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0">Skills</h2>
       </div>
 
       <div className="grid-wrapper grid grid-cols-3 gap-4">
-        {/* Card 1 */}
-        <Card title="Front-end" colour="blue">
-          <p>Text for Card 1</p>
-          <p>Text for Card 1</p>
-          <p>Text for Card 1</p>
-        </Card>
-
-        {/* Card 2 */}
-        <Card title="Back-end" colour="blue">
-          <p>Text for Card 2</p>
-          <p>Text for Card 2</p>
-          <p>Text for Card 2</p>
-        </Card>
-
-        {/* Card 3 */}
-        <Card title="Others" colour="blue">
-          <p>Text for Card 3</p>
-          <p>Text for Card 3</p>
-          <p>Text for Card 3</p>
-        </Card>
+        {/* Generate Card by mapping */}
+        {skillsTitles.map(title => (
+          <Card key={title} title={title} colour="blue">
+            {skills[title].map(skill => (
+              <p key={skill}>{skill}</p>
+            ))}
+          </Card>
+        ))}
       </div>
     </>
   );
