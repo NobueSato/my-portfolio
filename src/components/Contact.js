@@ -12,7 +12,7 @@ const Contact = () => {
         />
       </div>
       <div className="contact-form flex justify-center items-center h-5/6 ml-42">
-        <Card title="Get in touch with me">
+        <Card title="Contact me">
           <form name="contact" method="POST" data-netlify="true" className="flex flex-col gap-4">
             <input type="hidden" name="form-name" value="contact" className="hidden" />
             <label htmlFor="name">Name</label>
