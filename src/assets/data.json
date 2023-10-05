@@ -15,9 +15,9 @@
       "Others"
     ],
     "skills": {
-      "Front-end": ["React", "JavaScript", "HTML", "CSS"],
-      "Back-end": ["JavaScript", "Java", "MySQL", "Node.js"],
-      "Others":["AWS", "Docker", "C/C++", "Raspberry Pi", "Arduino"]
+      "Front-end": ["JavaScript", "HTML", "CSS", "SCSS", "Bootstrap", "React", "Angular", "Next.js", "Tailwind"],
+      "Back-end": ["JavaScript", "Java", "SQL", "NoSQL", "RESTful API","Node.js", "Express"],
+      "Others":["dotCMS", "Github", "Bitbucket", "Jira", "Confluence", "Figma", "AWS", "Docker", "C/C++", "Raspberry Pi", "Arduino"]
     }
   },
 
