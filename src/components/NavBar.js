@@ -1,25 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './NavBar.css';
+import { Outlet, Link } from "react-router-dom";
+import logo from "../assets/images/logo.png";
 
 function NavBar() {
   return (
-    <nav className="bg-green-200 p-6">
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/projects">Projects</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
-      </ul>
-    </nav>
+    <>
+      <nav className="nav-bar">
+        <ul className="flex justify-center">
+          {/* Make them react-scroll link later */}
+          {/* <li className="w-1/4 flex justify-center items-center">
+            <Link to="/about">ABOUT</Link>
+         </li>
+         <li>
+            <Link to="/skills">SKILLS</Link>
+          </li> */}
+          <li>
+            <Link to="/">
+              <img src={logo} alt="Logo" />
+            </Link>
+          </li>
+          {/* <li>
+            <Link to="/projects">PROJECTS</Link>
+          </li>
+          <li>
+            <Link to="/contact">CONTACT</Link>
+          </li> */}
+        </ul>
+      </nav>
+
+      <Outlet />
+    </>
   );
 }
 

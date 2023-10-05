@@ -1,17 +1,29 @@
-import React from 'react';
-import NavBar from './NavBar';
+import Hero from './Hero';
+import About from './About';
+import Skills from './Skills';
+import Projects from './Projects';
+import Contact from './Contact';
 
 function HomePage() {
     return (
-      <div>
-        <NavBar />
-        <main className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-gray-800 mt-6">Welcome to my portfolio!</h1>
-          <p className="text-xl text-gray-600 mt-4">This is my personal website where I showcase my projects.</p>
-        </main>
-      </div>
+      <>
+        <section id="section1" className="hero">
+          <Hero />
+        </section>
+        <section id="section2">
+          <About />
+        </section>
+        <section id="section3">
+          <Skills />
+        </section>
+        <section id="section4">
+          <Projects />
+        </section>
+        <section id="section5">
+          <Contact />                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+        </section>
+      </>
     );
   }
-  
   
   export default HomePage;

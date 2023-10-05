@@ -1,0 +1,207 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
+@import './_mixins';
+
+body {
+  font-family: 'Tenor Sans', sans-serif;
+  background-image: url("../assets/images/bg-image.png");
+  background-size: contain;
+  background-repeat: repeat-y;
+}
+
+.nav-bar{
+  width: 100%;
+  overflow: hidden;
+
+  ul li {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    a{
+      float: left;
+      color: #FF00BF;
+    }
+  }
+}
+
+section {
+  margin: 50px auto 0; /* Use "auto" for horizontal centering */
+  padding: 10px;
+  height: 80vh;
+  width: 90%; /* Set the width to 90% */
+}
+
+.hero {
+  height: auto;
+}
+
+.section-header {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  padding-bottom: 30px;
+  height: 15%;
+  position: relative;
+}
+
+.grid-container {
+  align-items: center;
+  justify-content: center;
+  max-height: 100%; /* Ensure the grid-container does not exceed its parent's height */
+  overflow: hidden; /* Hide any overflowing content */
+}
+
+.window-purple-bg {
+  @include windowBgStyles($purple); /* Purple-600 background */
+}
+
+.window-purple-title {
+  @include windowTitleStyles($purple); /* Purple-600 background */
+}
+
+.pink-button {
+  @include buttonStyles($pink, 0.7rem); /* Example: Passing 'red' as the background color and 0.25rem as margin-right */
+}
+
+.yellow-button {
+  @include buttonStyles($yellow, 0.7rem); /* Example: Passing 'yellow' as the background color and 0.25rem as margin-right */
+}
+
+.white-button {
+  @include buttonStyles(white, 0); /* Example: Passing 'white' as the background color and 0px as margin-right */
+}
+
+.window-blue-bg {
+  @include windowBgStyles($blue); /* Purple-600 background */
+}
+
+.window-blue-title {
+  @include windowTitleStyles($blue); /* Purple-600 background */
+}
+
+.card-title{
+  color: white; /* Equivalent to text-white */
+  font-size: 1.5rem; /* Equivalent to text-3xl at 2xl breakpoint */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card-content {
+  padding: 50px 20px 20px;
+  background-color: #ffffff; /* White background */
+  border-bottom-left-radius: 0.5rem; /* Large rounded bottom-left corner */
+  border-bottom-right-radius: 0.5rem; /* Large rounded bottom-right corner */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Height of the container will take up the entire available height */
+}
+
+.grid-wrapper {
+  height: 85%;
+}
+
+.contact-form {
+  background-image: url("../assets/images/contactbg.png");
+  background-size: 90% 100%; /* Adjust the image size to cover the section */
+  background-repeat: no-repeat; /* Prevent image from repeating */
+  background-position: center; /* Center the image within the section */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: center; /* Keep labels left-justified */
+  width: 700px;
+}
+
+label {
+  display: block;
+  text-align: left; /* Keep labels left-justified */
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  align-self: center; /* Center the button within the flex container */
+  width: 100px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.horizontal-icons {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+
+/* Styles for screens with a width of 640px or more (sm breakpoint) */
+@media (min-width: 640px) {
+
+}
+
+/* Styles for screens with a width of 768px or more (md breakpoint) */
+@media (min-width: 768px) {
+  .nav-bar ul li {
+    font-size: 1.5rem;
+  }
+}
+
+/* Styles for screens with a width of 1024px or more (lg breakpoint) */
+@media (min-width: 1024px) {
+  
+}
+
+/* Styles for screens with a width of 1280px or more (xl breakpoint) */
+@media (min-width: 1280px) {
+  
+  .nav-bar ul li {
+    font-size: 2rem;
+    a img {
+      height: 8rem;
+      width: auto;
+    }
+  }
+
+  #hero img {
+    width: 90%;
+  }
+
+}
+
+

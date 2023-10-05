@@ -1,0 +1,33 @@
+$pink: #FF7BF6;
+$yellow: #FAE679;
+$purple: #A163EF;
+$blue: #77F3FF;
+
+@mixin windowBgStyles ($background-color){
+  background-color: $background-color; /* Purple-600 background */
+  padding: 1rem; /* 4 units of padding (16px) */
+  border-radius: 0.5rem; /* Large rounded corners */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Medium shadow */
+  position: relative; /* Relative positioning */
+}
+
+@mixin windowTitleStyles ($background-color){
+  background-color: $background-color; /* Purple-800 background */
+  display: flex; /* Flex layout */
+  align-items: center; /* Center items vertically */
+  border-radius: 0.5rem 0.5rem 0 0; /* Rounded corners (top-left and top-right) */
+  padding: 0.25rem 0.5rem; /* 1 unit of padding (4px) on the top and bottom, 2 units of padding (8px) on the left and right */
+  height: 3rem; /* Height of 12 units (48px) */
+  position: absolute; /* Absolute positioning */
+  top: 0; /* Position at the top */
+  left: 0; /* Position at the left */
+  right: 0; /* Position at the right */
+}
+
+@mixin buttonStyles($background-color, $margin-right) {
+    border-radius: 50%;
+    margin-right: $margin-right; /* Use the provided value for margin-right */
+    background-color: $background-color;
+    width: 1rem;
+    height: 1rem;
+}

@@ -1,0 +1,53 @@
+{
+  "about": {
+    "title": [
+      "About Me"
+    ],
+    "paragraphs": [
+      "Hi I’m Nobue Sato",
+      "With one year of experience as a software engineer under my belt, I am known for my dedication, collaborative work style, and strong commitment to continuous learning through projects and initiatives. I strive to create solutions that improve people's daily lives and make a difference in the world."
+    ]
+  },
+  "skills": {
+    "titles": [
+      "Front-end",
+      "Back-end",
+      "Others"
+    ],
+    "skills": {
+      "Front-end": ["JavaScript", "HTML", "CSS", "SCSS", "Bootstrap", "React", "Angular", "Next.js", "Tailwind"],
+      "Back-end": ["JavaScript", "Java", "SQL", "NoSQL", "RESTful API","Node.js", "Express"],
+      "Others":["dotCMS", "Github", "Bitbucket", "Jira", "Confluence", "Figma", "AWS", "Docker", "C/C++", "Raspberry Pi", "Arduino"]
+    }
+  },
+
+  "projects": [
+    {
+      "name": "Project 1",
+      "image": "https://cdn.pixabay.com/photo/2018/08/18/13/26/interface-3614766_1280.png",
+      "description": "This is the description of Project 1. It is a web application that allows users to...",
+      "skills": ["React", "JavaScript", "HTML", "CSS"]
+    },
+    {
+      "name": "Project 2",
+      "image": "https://cdn.pixabay.com/photo/2018/08/18/13/26/interface-3614766_1280.png",
+      "description": "Project 2 is a mobile app that helps users organize their tasks...",
+      "skills": ["React Native", "JavaScript", "Redux", "CSS"]
+    },
+    {
+      "name": "Project 3",
+      "image": "https://cdn.pixabay.com/photo/2018/08/18/13/26/interface-3614766_1280.png",
+      "description": "This is an e-commerce website built with MERN stack...",
+      "skills": ["MongoDB", "Express", "React", "Node.js", "CSS"]
+    },
+    {
+      "name": "Project 4",
+      "image": "https://cdn.pixabay.com/photo/2018/08/18/13/26/interface-3614766_1280.png",
+      "description": "Project 4 is a data visualization dashboard...",
+      "skills": ["D3.js", "JavaScript", "HTML", "CSS"]
+    }
+  ]
+  }
+
+
+  
