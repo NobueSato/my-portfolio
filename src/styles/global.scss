@@ -11,9 +11,21 @@ body {
   background-repeat: repeat-y;
 }
 
-.nav-bar ul li a{
-  float: left;
-  color: #FF00BF;
+.nav-bar{
+  width: 100%;
+  overflow: hidden;
+
+  ul li {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    a{
+      float: left;
+      color: #FF00BF;
+    }
+  }
 }
 
 section {
@@ -69,6 +81,14 @@ section {
 
 .window-blue-title {
   @include windowTitleStyles($blue); /* Purple-600 background */
+}
+
+.card-title{
+  color: white; /* Equivalent to text-white */
+  font-size: 1.5rem; /* Equivalent to text-3xl at 2xl breakpoint */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .card-content {
@@ -157,25 +177,25 @@ button {
 
 /* Styles for screens with a width of 768px or more (md breakpoint) */
 @media (min-width: 768px) {
-
+  .nav-bar ul li {
+    font-size: 1.5rem;
+  }
 }
 
 /* Styles for screens with a width of 1024px or more (lg breakpoint) */
 @media (min-width: 1024px) {
-
+  
 }
 
 /* Styles for screens with a width of 1280px or more (xl breakpoint) */
 @media (min-width: 1280px) {
   
   .nav-bar ul li {
-    width: 25%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 2rem;
-    font-weight: bold;
-    
+    a img {
+      height: 8rem;
+      width: auto;
+    }
   }
 
   #hero img {
