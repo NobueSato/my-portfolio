@@ -6,7 +6,7 @@ export function Card({ title, colour = "purple", children }) {
   const titleBarClass = `window-${colour}-title`;
 
   return (
-    <div className={windowClass}>
+    <div className={`w-5/6 ${windowClass}`}>
       {/* Title Bar */}
       <div className={titleBarClass}>
         {/* Pink Button */}
@@ -19,7 +19,7 @@ export function Card({ title, colour = "purple", children }) {
       </div>{" "}
       {/* The end of title bar */}
       {/* Content for the card */}
-      <div className="card-content bg-white rounded-b-lg shadow-md flex flex-col items-center justify-center h-full">
+      <div className="card-content bg-white rounded-b-lg shadow-md flex flex-col items-center justify-center h-full w-auto">
         {children}
       </div>
     </div>
@@ -39,16 +39,18 @@ function Skills() {
         </h2>
       </div>
 
-      <div className="grid-wrapper grid grid-cols-3 gap-4">
+      <div className="grid-wrapper grid gap-4 md:grid-cols-3">
         {/* Generate Card by mapping */}
         {skillsTitles.map((title) => (
-          <Card key={title} title={title} colour="blue">
-            {skills[title].map((skill) => (
-              <p key={skill} className="text-4xl">
-                {skill}
-              </p>
-            ))}
-          </Card>
+          <div key={title} className="flex justify-center items-center">
+            <Card title={title} colour="blue">
+              {skills[title].map((skill) => (
+                <p key={skill} className="text-4xl">
+                  {skill}
+                </p>
+              ))}
+            </Card>
+          </div>
         ))}
       </div>
     </>
