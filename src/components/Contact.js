@@ -39,7 +39,7 @@ const Contact = () => {
           className="h-full w-auto object-contain"
         />
       </div>
-      <div className="contact-form flex justify-center items-center h-5/6 ml-42">
+      <div className="flex justify-center items-center h-5/6 ml-42">
         <Card title="Contact me">
           <form
             id="contact-form"
