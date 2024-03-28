@@ -19,7 +19,7 @@ export function Card({ title, colour = "purple", children }) {
       </div>{" "}
       {/* The end of title bar */}
       {/* Content for the card */}
-      <div className="card-content bg-white rounded-b-lg shadow-md flex flex-col items-center justify-center h-full w-auto">
+      <div className="card-content bg-white rounded-b-lg shadow-md flex flex-col items-center justify-center h-full w-auto overflow-hidden">
         {children}
       </div>
     </div>
@@ -33,21 +33,17 @@ function Skills() {
   return (
     <>
       <div className="section-header">
-        <img src={titleimg} alt="Skills title" className="h-full w-auto" />
-        <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0">
-          Skills
-        </h2>
+        <img src={titleimg} alt="Skills title" className="object-contain" />
+        <h2 className="sr-only">Skills</h2>
       </div>
 
-      <div className="grid-wrapper grid gap-4 md:grid-cols-3">
+      <div className="grid-wrapper grid gap-4 md:grid-cols-3 overflow-hidden">
         {/* Generate Card by mapping */}
         {skillsTitles.map((title) => (
-          <div key={title} className="flex justify-center items-center">
+          <div key={title} className="flex justify-center">
             <Card title={title} colour="blue">
               {skills[title].map((skill) => (
-                <p key={skill} className="text-4xl">
-                  {skill}
-                </p>
+                <p key={skill}>{skill}</p>
               ))}
             </Card>
           </div>
