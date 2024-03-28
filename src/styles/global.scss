@@ -197,6 +197,11 @@ button {
 
 /* Styles for screens from 641px to 768px (medium screens) */
 @media (max-width: 768px) {
+
+  section{
+    margin: 15px auto 0; /* Use "auto" for horizontal centering */
+  }
+
   .section-header {
     padding-bottom: 10px;
   }
