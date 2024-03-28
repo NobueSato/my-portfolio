@@ -4,13 +4,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
 @import './_mixins';
 
-body {
+body, html {
   font-family: 'Tenor Sans', sans-serif;
   background-image: url("../assets/images/bg-image.png");
   background-size: contain;
   background-repeat: repeat-y;
 }
 
+// Navigation bar
 .nav-bar{
   width: 100%;
   overflow: hidden;
@@ -28,20 +29,17 @@ body {
   }
 }
 
+// Sections
 section {
   margin: 50px auto 0; /* Use "auto" for horizontal centering */
   padding: 10px;
-  height: 90vh;
-  width: 90%; /* Set the width to 90% */
-  
-  @media (max-width: 767px) {
-    height: auto; // This makes the height variable for screens smaller than tablets
-  }
-
+  width: 90%; 
+  max-height: 100%; /* Ensure the grid-container does not exceed its parent's height */
+  overflow: hidden;
 }
 
 .hero {
-  height: auto;
+  margin-top: 1rem;
 }
 
 .section-header {
@@ -49,15 +47,7 @@ section {
   justify-content: center;
   align-items: center; 
   padding-bottom: 30px;
-  height: 15%;
   position: relative;
-}
-
-.grid-container {
-  align-items: center;
-  justify-content: center;
-  max-height: 100%; /* Ensure the grid-container does not exceed its parent's height */
-  overflow: hidden; /* Hide any overflowing content */
 }
 
 .window-purple-bg {
@@ -69,11 +59,11 @@ section {
 }
 
 .pink-button {
-  @include buttonStyles($pink, 0.7rem); /* Example: Passing 'red' as the background color and 0.25rem as margin-right */
+  @include buttonStyles($pink, 0.3rem); /* Example: Passing 'red' as the background color and 0.25rem as margin-right */
 }
 
 .yellow-button {
-  @include buttonStyles($yellow, 0.7rem); /* Example: Passing 'yellow' as the background color and 0.25rem as margin-right */
+  @include buttonStyles($yellow, 0.3rem); /* Example: Passing 'yellow' as the background color and 0.25rem as margin-right */
 }
 
 .white-button {
@@ -90,32 +80,45 @@ section {
 
 .card-title{
   color: white; /* Equivalent to text-white */
-  font-size: 1.5rem; /* Equivalent to text-3xl at 2xl breakpoint */
+  font-size: 1rem; /* Equivalent to text-3xl at 2xl breakpoint */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+
+  @media (min-width: 769px){
+    font-size: 1.1rem;
+    margin-left: 0.4rem;
+  }
 }
 
 .card-content {
-  padding: 50px 20px 20px;
-  background-color: #ffffff; /* White background */
-  border-bottom-left-radius: 0.5rem; /* Large rounded bottom-left corner */
-  border-bottom-right-radius: 0.5rem; /* Large rounded bottom-right corner */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%; /* Height of the container will take up the entire available height */
+  padding: 30px 5px 10px 5px;
+  @media (min-width: 769px){
+    padding: 30px 20px 10px;
+  }
 
   p{
     font-size: 1rem;
+    line-height: 1rem;
+    white-space: pre-line;
+    @media (min-width: 769px){
+      font-size: 1.5rem;
+    line-height: 1.5rem; 
+    }
+    
   }
-
 }
 
-.grid-wrapper {
-  height: 85%;
+.about-card {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center;
+  align-items: center;
+}
+
+.about-column {
+  width: calc(50% - 20px); /* Subtract padding from the width */
+  padding: 10px;
 }
 
 form {
@@ -128,14 +131,13 @@ form {
 label {
   display: block;
   text-align: left; /* Keep labels left-justified */
-  margin-bottom: 5px;
 }
 
 input,
 textarea {
   width: 100%;
+  padding: 0.5rem;
   box-sizing: border-box;
-  padding: 8px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -151,10 +153,30 @@ button {
   cursor: pointer;
 }
 
-.horizontal-icons {
-  display: flex;
-  align-items: center;
-  padding-top: 20px;
+/* Popup styles */
+.popup {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  color: white;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 }
 
 .button {
@@ -173,53 +195,20 @@ button {
   margin-right: 10px;
 }
 
-
-/* Styles for screens with a width of 640px or more (sm breakpoint) */
-@media (min-width: 640px) {
-  .card-content p {
-    font-size: 1.2rem; /* Adjust the font size for medium-sized screens */
+/* Styles for screens from 641px to 768px (medium screens) */
+@media (max-width: 768px) {
+  .section-header {
+    padding-bottom: 10px;
   }
 
-}
-
-/* Styles for screens with a width of 768px or more (md breakpoint) */
-@media (min-width: 768px) {
-  .nav-bar ul li {
-    font-size: 1.5rem;
+  .section-header img {
+    height: 40px;
   }
 
-  .card-content p {
-    font-size: 1.5rem; /* Adjust the font size for larger screens (768px and above) */
+  .about-column {
+    width: 100%; /* Make columns full width on smaller screens */
   }
 }
 
-/* Styles for screens with a width of 1024px or more (lg breakpoint) */
-@media (min-width: 1024px) {
-  .card-content p {
-    font-size: 1.8rem; /* Adjust the font size for even larger screens (1024px and above) */
-  }
-  
-}
-
-/* Styles for screens with a width of 1280px or more (xl breakpoint) */
-@media (min-width: 1280px) {
-  
-  .nav-bar ul li {
-    font-size: 2rem;
-    a img {
-      height: 8rem;
-      width: auto;
-    }
-  }
-
-  #hero img {
-    width: 90%;
-  }
-
-  .card-content p {
-    font-size: 2rem; /* Adjust the font size for extra-large screens (1280px and above) */
-  }
-
-}
 
 

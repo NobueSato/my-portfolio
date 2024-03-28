@@ -1,48 +1,58 @@
 import { Card } from "./Skills";
-import titleImg from '../assets/images/about.png';
-import linkedinIcon from '../assets/images/icons8-linkedin-50.png';
-import githubIcon from '../assets/images/icons8-github-50.png';
-import data from '../assets/data.json';
+import titleImg from "../assets/images/about.png";
+import linkedinIcon from "../assets/images/icons8-linkedin-50.png";
+import githubIcon from "../assets/images/icons8-github-50.png";
+import data from "../assets/data.json";
 
 function About() {
-  const resumeLink = '/NobueSato_resume.pdf';
-  const linkedinLink = 'https://www.linkedin.com/in/nobue-sato';
-  const githubLink = 'https://github.com/NobueSato';
+  const resumeLink = "/NobueSato_resume.pdf";
+  const linkedinLink = "https://www.linkedin.com/in/nobue-sato";
+  const githubLink = "https://github.com/NobueSato";
   const aboutTitle = data.about.title[0];
   const [aboutParagraph1, aboutParagraph2] = data.about.paragraphs;
 
   return (
-    <div className="grid-container grid md:grid-cols-2 gap-10 h-full max-h-full overflow-hidden">
-      {/* Image column */}
-      <div className="md:order-first h-full flex mr-28 justify-center items-center pr-">
+    <>
+      <div className="section-header">
         <img
           src={titleImg}
-          alt="About title"
-          className="w-auto h-5/6 object-contain"
+          alt="About section title"
+          className="object-contain"
         />
       </div>
-
-      {/* Paragraph column */}
-      <div className="md:order-last flex justify-center items-center pr-14">
+      <div className="flex justify-center items-center">
         <Card title={aboutTitle}>
-          <p className="text-6xl font-semibold mb-4">{aboutParagraph1}</p>
-          <p className="text-2xl text-gray-700">
-            {aboutParagraph2}
-          </p>
-          <div className="horizontal-icons">
-            <a href={resumeLink} className="button" download>
-              Download Resume
-            </a>
-            <a href={linkedinLink} target="_blank" rel="noopener noreferrer">
-              <img src={linkedinIcon} alt="LinkedIn" className="icon" />
-            </a>
-            <a href={githubLink} target="_blank" rel="noopener noreferrer">
-              <img src={githubIcon} alt="GitHub" className="icon" />
-            </a>
+          <div className="about-card">
+            {/* 1st column */}
+            <div className="about-column">
+              <p className="font-semibold">{aboutParagraph1}</p>
+            </div>
+            {/* 2nd column */}
+            <div className="about-column">
+              <p>{aboutParagraph2}</p>
+            </div>
+
+            <div className="flex items-center justify-center">
+              <a
+                href={resumeLink}
+                className="inline-block px-4 py-2 bg-blue-600 text-xs sm:text-base text-white no-underline rounded-md mr-4"
+                download
+              >
+                Download Resume
+              </a>
+              <a href={linkedinLink} target="_blank" rel="noopener noreferrer">
+                <img src={linkedinIcon} alt="LinkedIn" className="icon" />
+                <span className="sr-only">LinkedIn</span>
+              </a>
+              <a href={githubLink} target="_blank" rel="noopener noreferrer">
+                <img src={githubIcon} alt="GitHub" className="icon" />
+                <span className="sr-only">GitHub</span>
+              </a>
+            </div>
           </div>
         </Card>
       </div>
-    </div>
+    </>
   );
 }
 
