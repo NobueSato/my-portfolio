@@ -1,12 +1,14 @@
 import headerImg from "../assets/images/contact.png";
 import emailjs from "emailjs-com"; // For emailjs-com package
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Card } from "./Skills";
 
 const Contact = () => {
   useEffect(() => {
     emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
   }, []);
+
+  const [showPopup, setShowPopup] = useState(false); // State to manage popup visibility
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,6 +26,8 @@ const Contact = () => {
       )
       .then((response) => {
         console.log("SUCCESS!", response);
+        setShowPopup(true); // Show the popup on successful submission
+        console.log(showPopup);
       })
       .catch((error) => {
         console.error("FAILED...", error);
@@ -33,11 +37,7 @@ const Contact = () => {
   return (
     <>
       <div className="section-header flex justify-center items-center h-30">
-        <img
-          src={headerImg}
-          alt="Contact title"
-          className="h-full w-auto object-contain"
-        />
+        <img src={headerImg} alt="Contact title" className="object-contain" />
       </div>
       <div className="flex justify-center items-center h-5/6 ml-42">
         <Card title="Contact me">
@@ -47,7 +47,7 @@ const Contact = () => {
             name="contact"
             method="POST"
             data-netlify="true"
-            className="flex flex-col gap-4"
+            className="flex flex-col gap-1"
           >
             <input
               type="hidden"
@@ -61,7 +61,7 @@ const Contact = () => {
               name="from_name"
               id="user_name"
               placeholder="Name"
-              className="border p-2"
+              className="border"
             />
             <label htmlFor="user_email">Email</label>
             <input
@@ -88,6 +88,17 @@ const Contact = () => {
           </form>
         </Card>
       </div>
+      {/* Popup */}
+      {showPopup && (
+        <div className="popup">
+          <div className="popup-content">
+            <span className="close" onClick={() => setShowPopup(false)}>
+              &times;
+            </span>
+            <p>Your form has been submitted!</p>
+          </div>
+        </div>
+      )}
     </>
   );
 };
